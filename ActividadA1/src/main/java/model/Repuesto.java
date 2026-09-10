@@ -68,6 +68,18 @@ public class Repuesto {
         this.repuesto = repuesto;
     }
 
+    @Override
+    public String toString() {
+        return "Repuesto{" +
+                "nombre='" + nombre + '\'' +
+                ", costo=" + costo +
+                ", cantidad=" + cantidad +
+                ", cantidadMinima=" + cantidadMinima +
+                ", ownedByTaller=" + ownedByTaller +
+                ", repuesto=" + repuesto +
+                '}';
+    }
+
     public String calcularCostoTotal () {
         double costoTotal = costo*cantidad;
         return "El costo total del repuesto es " + costoTotal;

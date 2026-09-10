@@ -27,6 +27,15 @@ public class Inventario {
     public void setListaRepuestos(List<Repuesto> listaRepuestos) {
         listaRepuestos = listaRepuestos;
     }
+
+    @Override
+    public String toString() {
+        return "Inventario{" +
+                "ownedByTaller=" + ownedByTaller +
+                ", listaRepuestos=" + listaRepuestos +
+                '}';
+    }
+
     /**
      * Metodo que registra Repuestos al Inventario
      * @param repuesto
