@@ -35,7 +35,7 @@ public class Inventario {
         listaRepuestos.add(repuesto);
     }
     /**
-     * Metodo para obtener las alertas de Stock minimo cuando se llegue a la cantidad minima de un repuesto
+     * Metodo para obtener las alertas de Stock minimo cuando se llegue a la cantidad minima de un repuesto.
      * @return
      */
     public List<Repuesto> obtenerAlertasStock() {
