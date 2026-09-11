@@ -65,7 +65,9 @@ public class Taller {
      * @param cliente
      */
     public void registrarCliente (Cliente cliente){
-        listaIndividuos.add(cliente);
+        if (cliente != null && !listaIndividuos.contains(cliente)) {
+            listaIndividuos.add(cliente);
+        }
     }
 
     /**
@@ -73,7 +75,9 @@ public class Taller {
      * @param mecanico
      */
     public void registrarMecanico (Mecanico mecanico){
-        listaIndividuos.add(mecanico);
+        if (mecanico != null && !listaIndividuos.contains(mecanico)) {
+            listaIndividuos.add(mecanico);
+        }
     }
 
     /**
@@ -81,7 +85,9 @@ public class Taller {
      * @param ordenServicio
      */
     public void registrarOrdenServico (OrdenServicio ordenServicio){
-        listaOrdenes.add(ordenServicio);
+        if (ordenServicio != null && !listaOrdenes.contains(ordenServicio)) {
+            listaOrdenes.add(ordenServicio);
+        }
     }
 
 }

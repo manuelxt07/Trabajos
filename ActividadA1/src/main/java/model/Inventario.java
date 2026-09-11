@@ -41,7 +41,9 @@ public class Inventario {
      * @param repuesto
      */
     public void registrarRepuesto (Repuesto repuesto){
-        listaRepuestos.add(repuesto);
+        if (repuesto != null && !listaRepuestos.contains(repuesto)) {
+            listaRepuestos.add(repuesto);
+        }
     }
     /**
      * Metodo para obtener las alertas de Stock minimo cuando se llegue a la cantidad minima de un repuesto.
