@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 class TallerTest {
-    // 1. Corregido el nombre del Logger
     private static final Logger LOG = Logger.getLogger(TallerTest.class.getName());
 
     @Test

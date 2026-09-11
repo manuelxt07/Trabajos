@@ -23,6 +23,7 @@ class InventarioTest {
         List<Repuesto> resultadoEsperado = new ArrayList<>();
         resultadoEsperado.add(r1);
         List<Repuesto> resultadoReal = i.obtenerAlertasStock();
+
         Assertions.assertIterableEquals(resultadoEsperado, resultadoReal);
 
         LOG.info("Fin Test Obtener Alertas Stock");
