@@ -16,8 +16,8 @@ class ClienteTest {
 
         Taller taller = new Taller("Taller");
         Cliente cliente = new Cliente("Manuel", taller, "1085915590", "3185454373", "Calle 4 N 4 - 16", new ArrayList<>());
-        Bicicleta bici1 = new Bicicleta("Trek", "Rojo", "SOR1", 2022 taller);
-        Bicicleta bici2 = new Bicicleta("Giant", "Negro", "SEP2", 2023, taller);
+        Bicicleta bici1 = new Bicicleta("Trek", "Rojo", "SOR1", 2022);
+        Bicicleta bici2 = new Bicicleta("Giant", "Negro", "SEP2", 2023);
 
         cliente.agregarBicicleta(bici1);
         cliente.agregarBicicleta(bici2);
