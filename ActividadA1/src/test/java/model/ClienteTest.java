@@ -12,15 +12,22 @@ class ClienteTest {
 
     @Test
     void agregarBicicleta() {
-        LOG.info("Inicio Test Registrar Bicicleta");
+        LOG.info("Inicio Test Agregar Bicicleta");
 
+        Taller taller = new Taller("Taller");
+        Cliente cliente = new Cliente("Manuel", taller, "1085915590", "3185454373", "Calle 4 N 4 - 16", new ArrayList<>());
+        Bicicleta bici1 = new Bicicleta("Trek", "Rojo", "SOR1", 2022, taller);
+        Bicicleta bici2 = new Bicicleta("Giant", "Negro", "SEP2", 2023, taller);
 
+        cliente.agregarBicicleta(bici1);
+        cliente.agregarBicicleta(bici2);
 
+        List<Bicicleta> resultadoEsperado = new ArrayList<>();
+        resultadoEsperado.add(bici1);
+        resultadoEsperado.add(bici2);
 
+        Assertions.assertIterableEquals(resultadoEsperado, cliente.getListaBicicletas());
 
-
-
-        LOG.info("Inicio Test Registrar Bicicleta");
-
+        LOG.info("Fin Test Agregar Bicicleta");
     }
 }
