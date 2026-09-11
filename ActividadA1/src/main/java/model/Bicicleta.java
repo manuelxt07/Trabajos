@@ -6,13 +6,15 @@ public class Bicicleta {
     private String color;
     private String serial;
     private int anioAmbiguedad;
+    private TipoBicicleta tipoBicicleta;
     private Taller ownedByTaller;
 
-    public Bicicleta(String marca, String color, String serial, int anioAmbiguedad, Taller ownedByTaller) {
+    public Bicicleta(String marca, String color, String serial, int anioAmbiguedad, TipoBicicleta tipoBicicleta, Taller ownedByTaller) {
         this.marca = marca;
         this.color = color;
         this.serial = serial;
         this.anioAmbiguedad = anioAmbiguedad;
+        this.tipoBicicleta = tipoBicicleta;
         this.ownedByTaller = ownedByTaller;
     }
 
@@ -52,6 +54,14 @@ public class Bicicleta {
         return ownedByTaller;
     }
 
+    public TipoBicicleta getTipoBicicleta() {
+        return tipoBicicleta;
+    }
+
+    public void setTipoBicicleta(TipoBicicleta tipoBicicleta) {
+        this.tipoBicicleta = tipoBicicleta;
+    }
+
     public void setOwnedByTaller(Taller ownedByTaller) {
         this.ownedByTaller = ownedByTaller;
     }
@@ -63,6 +73,7 @@ public class Bicicleta {
                 ", color='" + color + '\'' +
                 ", serial='" + serial + '\'' +
                 ", anioAmbiguedad=" + anioAmbiguedad +
+                ", tipoBicicleta=" + tipoBicicleta +
                 ", ownedByTaller=" + ownedByTaller +
                 '}';
     }
