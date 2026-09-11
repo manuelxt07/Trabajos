@@ -2,19 +2,20 @@ package app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/primary.fxml"));
-        VBox root = fxmlLoader.load();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
 
-        Scene scene = new Scene(root, 400, 300);
-        primaryStage.setTitle("BiciTaller - Inicio");
+        Parent root = fxmlLoader.load();
+
+        Scene scene = new Scene(root, 600, 400);
+        primaryStage.setTitle("Taller de Bicicletas FixIt - Menú Principal");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
