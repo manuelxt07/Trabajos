@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="500.0" prefWidth="850.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BicicletaController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+    <children>
+        <Label text="Bicicletas Registradas e Historial de Servicios">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <SplitPane dividerPositions="0.45" VBox.vgrow="ALWAYS">
+            <items>
+                <!-- Tabla Izquierda: Bicicletas -->
+                <VBox spacing="10.0">
+                    <children>
+                        <Label text="Seleccione una bicicleta:">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="tablaBicicletas" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="colSerial" prefWidth="100.0" text="Serial" />
+                                <TableColumn fx:id="colMarca" prefWidth="120.0" text="Marca" />
+                                <TableColumn fx:id="colColor" prefWidth="90.0" text="Color" />
+                            </columns>
+                        </TableView>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+
+                <!-- Tabla Derecha: Historial del Servicio -->
+                <VBox spacing="10.0">
+                    <children>
+                        <Label fx:id="lblHistorialTitulo" text="Historial de Servicios">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="tablaHistorial" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="colFecha" prefWidth="90.0" text="Fecha" />
+                                <TableColumn fx:id="colMotivo" prefWidth="130.0" text="Motivo" />
+                                <TableColumn fx:id="colDiagnostico" prefWidth="130.0" text="Diagnóstico" />
+                                <TableColumn fx:id="colMecanico" prefWidth="100.0" text="Mecánico" />
+                            </columns>
+                        </TableView>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            </items>
+        </SplitPane>
+    </children>
+</VBox>

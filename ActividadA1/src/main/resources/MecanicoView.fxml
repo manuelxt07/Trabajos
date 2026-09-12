@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MecanicoController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <VBox prefWidth="280.0" spacing="12.0">
+            <children>
+                <Label text="Registro de Mecánico">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtNombre" promptText="Nombre completo" />
+                <TextField fx:id="txtEspecialidad" promptText="Especialidad " />
+                <TextField fx:id="txtCodigo" promptText="Código Interno" />
+                <Button maxWidth="Infinity" onAction="#registrarMecanico" prefHeight="35.0" text="Registrar Mecánico" />
+            </children>
+        </VBox>
+
+        <VBox HBox.hgrow="ALWAYS">
+            <children>
+                <TableView fx:id="tablaMecanicos" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
+                        <TableColumn fx:id="colEspecialidad" prefWidth="140.0" text="Especialidad" />
+                        <TableColumn fx:id="colCodigo" prefWidth="100.0" text="Código" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</HBox>

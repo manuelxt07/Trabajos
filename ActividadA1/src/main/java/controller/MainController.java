@@ -66,4 +66,45 @@ public class MainController {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void ingresarAlSistema(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
+            Parent root = loader.load();
+
+            // Transferir la instancia del taller al nuevo controlador
+            MainController controller = loader.getController();
+            controller.tallerPrincipal = this.tallerPrincipal;
+
+            // Abrir la nueva ventana del Menú Principal
+            Stage stage = new Stage();
+            stage.setTitle("Taller FixIt - Menú Principal");
+            stage.setScene(new Scene(root, 450, 400));
+            stage.show();
+
+            // Cerrar la ventana actual (primary.fxml)
+            Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void abrirGestionBicicletas(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/BicicletaView.fxml.fxml"));
+            Parent root = loader.load();
+
+            BicicletaController controller = loader.getController();
+            controller.setTallerPrincipal(this.tallerPrincipal);
+
+            Stage stage = new Stage();
+            stage.setTitle("Bicicletas Registradas e Historial");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

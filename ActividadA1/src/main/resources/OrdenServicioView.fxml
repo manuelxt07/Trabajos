@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefWidth="500.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrdenServicioController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+    <children>
+        <Label text="Crear Orden de Servicio">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <GridPane hgap="10.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints prefWidth="120.0" />
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="30.0" />
+                <RowConstraints minHeight="30.0" />
+                <RowConstraints minHeight="30.0" />
+                <RowConstraints minHeight="30.0" />
+                <RowConstraints minHeight="30.0" />
+            </rowConstraints>
+            <children>
+                <Label text="Fecha:" GridPane.rowIndex="0" />
+                <DatePicker fx:id="dpFecha" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Cliente:" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cbCliente" prefWidth="300.0" promptText="Seleccionar cliente" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Bicicleta:" GridPane.rowIndex="2" />
+                <ComboBox fx:id="cbBicicleta" prefWidth="300.0" promptText="Seleccionar bicicleta" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Mecánico:" GridPane.rowIndex="3" />
+                <ComboBox fx:id="cbMecanico" prefWidth="300.0" promptText="Asignar mecánico" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label text="Costo Total ($):" GridPane.rowIndex="4" />
+                <TextField fx:id="txtCostoTotal" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            </children>
+        </GridPane>
+
+        <Label text="Motivo del servicio:" />
+        <TextArea fx:id="txtMotivo" prefHeight="60.0" promptText="Describe el motivo de ingreso..." />
+
+        <Label text="Diagnóstico inicial:" />
+        <TextArea fx:id="txtDiagnostico" prefHeight="60.0" promptText="Diagnóstico del mecánico..." />
+
+        <Button maxWidth="Infinity" onAction="#registrarOrden" prefHeight="40.0" text="Registrar Orden de Servicio" />
+    </children>
+</VBox>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InventarioController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <VBox prefWidth="280.0" spacing="12.0">
+            <children>
+                <Label text="Agregar Repuesto">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtNombre" promptText="Nombre del repuesto" />
+                <TextField fx:id="txtCosto" promptText="Costo unitario" />
+                <TextField fx:id="txtCantidad" promptText="Cantidad inicial" />
+                <TextField fx:id="txtCantidadMinima" promptText="Stock mínimo para alerta" />
+                <Button maxWidth="Infinity" onAction="#registrarRepuesto" prefHeight="35.0" text="Guardar Repuesto" />
+            </children>
+        </VBox>
+
+        <VBox HBox.hgrow="ALWAYS">
+            <children>
+                <TableView fx:id="tablaInventario" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colNombre" prefWidth="140.0" text="Nombre" />
+                        <TableColumn fx:id="colCosto" prefWidth="90.0" text="Costo ($)" />
+                        <TableColumn fx:id="colCantidad" prefWidth="80.0" text="Cantidad" />
+                        <TableColumn fx:id="colMinimo" prefWidth="90.0" text="Stock Mínimo" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</HBox>

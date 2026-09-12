@@ -20,9 +20,7 @@
             </font>
         </Label>
 
-        <Button fx:id="btnIngresar"
-                onAction="#onIngresar"
-                text="Ingresar al Sistema"/>
+        <Button fx:id="btnIngresar" onAction="#ingresarAlSistema" text="Ingresar al Sistema"/>
 
     </children>
 
