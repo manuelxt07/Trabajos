@@ -63,13 +63,13 @@ public class InventarioController {
 
     private void verificarAlertas() {
         List<Repuesto> alertas = taller.getInventario().obtenerAlertasStock();
-            StringBuilder mensaje = new StringBuilder("Repuestos con stock bajo:\n");
-            for (Repuesto r : alertas) {
-                mensaje.append("- ").append(r.getNombre()).append(" (Actual: ").append(r.getCantidad()).append(")\n");
-            }
-
-            Alert alert = new Alert(Alert.AlertType.WARNING, mensaje.toString());
-            alert.setHeaderText("Alerta de Inventario");
-            alert.show();
+        StringBuilder mensaje = new StringBuilder("Repuestos con stock bajo:\n");
+        for (Repuesto r : alertas) {
+            mensaje.append("- ").append(r.getNombre()).append(" (Actual: ").append(r.getCantidad()).append(")\n");
         }
+
+        Alert alert = new Alert(Alert.AlertType.WARNING, mensaje.toString());
+        alert.setHeaderText("Alerta de Inventario");
+        alert.show();
     }
+}

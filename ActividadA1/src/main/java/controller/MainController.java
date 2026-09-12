@@ -66,22 +66,4 @@ public class MainController {
             e.printStackTrace();
         }
     }
-    @FXML
-    private void ingresarAlSistema(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
-            Parent root = loader.load();
-
-            MainController controller = loader.getController();
-            controller.tallerPrincipal = this.tallerPrincipal;
-
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root, 480, 420));
-            stage.setTitle("Taller FixIt - Menú Principal");
-            stage.show();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
