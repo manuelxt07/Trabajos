@@ -10,10 +10,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
-
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                getClass().getResource("/primary.fxml")
+        );
         Parent root = fxmlLoader.load();
-
         Scene scene = new Scene(root, 600, 400);
         primaryStage.setTitle("Taller de Bicicletas FixIt - Menú Principal");
         primaryStage.setScene(scene);
