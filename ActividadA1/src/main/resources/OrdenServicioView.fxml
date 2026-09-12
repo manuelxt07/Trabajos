@@ -51,6 +51,22 @@
 
         <Label text="Diagnóstico inicial:" />
         <TextArea fx:id="txtDiagnostico" prefHeight="60.0" promptText="Diagnóstico del mecánico..." />
+        <Label text="Repuestos usados:" />
+        <HBox spacing="10.0">
+            <children>
+                <ComboBox fx:id="cbRepuesto" prefWidth="200.0" promptText="Seleccionar repuesto" />
+                <TextField fx:id="txtCantidadRepuesto" promptText="Cantidad" prefWidth="80.0" />
+                <Button onAction="#agregarRepuestoALista" text="Agregar" />
+            </children>
+        </HBox>
+
+        <TableView fx:id="tablaRepuestosOrden" prefHeight="120.0">
+            <columns>
+                <TableColumn fx:id="colRepuestoNombre" prefWidth="150.0" text="Repuesto" />
+                <TableColumn fx:id="colRepuestoCantidad" prefWidth="80.0" text="Cantidad" />
+                <TableColumn fx:id="colRepuestoSubtotal" prefWidth="100.0" text="Subtotal" />
+            </columns>
+        </TableView>
 
         <Button maxWidth="Infinity" onAction="#registrarOrden" prefHeight="40.0" text="Registrar Orden de Servicio" />
     </children>

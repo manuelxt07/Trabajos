@@ -10,6 +10,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        System.out.println("Ruta encontrada: " + getClass().getResource("/primary.fxml"));
+
         FXMLLoader fxmlLoader = new FXMLLoader(
                 getClass().getResource("/primary.fxml")
         );

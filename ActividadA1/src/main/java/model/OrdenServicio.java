@@ -119,14 +119,10 @@ public class OrdenServicio {
                 ", diagnostico='" + diagnostico + '\'' +
                 ", trabajosRealizados='" + trabajosRealizados + '\'' +
                 ", costoTotal=" + costoTotal +
-                ", ownedByTaller=" + ownedByTaller +
-                ", listaRepuestos=" + listaRepuestos +
-                ", mecanico=" + mecanico +
-                ", bicicleta=" + bicicleta +
+                ", mecanico=" + (mecanico != null ? mecanico.getNombre() : "null") +
+                ", bicicleta=" + (bicicleta != null ? bicicleta.getSerial() : "null") +
                 '}';
     }
-
-    // Metodos
 
     /**
      * Metodo para añadir repuestos a la Orden de Servicio

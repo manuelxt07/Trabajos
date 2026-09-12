@@ -84,8 +84,7 @@ public class Bicicleta {
                 ", serial='" + serial + '\'' +
                 ", anioAmbiguedad=" + anioAmbiguedad +
                 ", tipoBicicleta=" + tipoBicicleta +
-                ", Cliente=" + cliente +
-                ", ownedByTaller=" + ownedByTaller +
+                ", cliente=" + (cliente != null ? cliente.getNombre() : "null") +
                 '}';
     }
 }

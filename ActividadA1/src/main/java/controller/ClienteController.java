@@ -39,7 +39,7 @@ public class ClienteController {
 
     @FXML
     public void initialize() {
-        cbTipoBicicleta.getItems().setAll(TipoBicicleta.values()); //[cite: 10]
+        cbTipoBicicleta.getItems().setAll(TipoBicicleta.values());
 
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colIdentificacion.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
@@ -48,6 +48,23 @@ public class ClienteController {
 
     @FXML
     private void registrarCliente(ActionEvent event) {
+        if (txtNombre.getText().isBlank() || txtIdentificacion.getText().isBlank()) {
+            mostrarAviso("El nombre y la identificación del cliente son obligatorios.");
+            return;
+        }
+        if (txtMarca.getText().isBlank() || txtSerial.getText().isBlank() || cbTipoBicicleta.getValue() == null) {
+            mostrarAviso("Marca, serial y tipo de bicicleta son obligatorios.");
+            return;
+        }
+
+        int anio;
+        try {
+            anio = Integer.parseInt(txtAnio.getText());
+        } catch (NumberFormatException e) {
+            mostrarAviso("El año/antigüedad de la bicicleta debe ser un número entero.");
+            return;
+        }
+
         Cliente nuevoCliente = new Cliente(
                 txtNombre.getText(), taller, txtIdentificacion.getText(),
                 txtTelefono.getText(), txtDireccion.getText(), new ArrayList<>()
@@ -55,11 +72,12 @@ public class ClienteController {
 
         Bicicleta nuevaBici = new Bicicleta(
                 txtMarca.getText(), txtColor.getText(), txtSerial.getText(),
-                Integer.parseInt(txtAnio.getText()), cbTipoBicicleta.getValue(),
+                anio, cbTipoBicicleta.getValue(),
                 nuevoCliente, taller
         );
 
         nuevoCliente.agregarBicicleta(nuevaBici);
+        taller.registrarBicicleta(nuevaBici);
         taller.registrarCliente(nuevoCliente);
 
         cargarDatos();
@@ -74,6 +92,12 @@ public class ClienteController {
             }
         });
         tablaClientes.setItems(FXCollections.observableArrayList(clientes));
+    }
+
+    private void mostrarAviso(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.WARNING, mensaje);
+        alert.setHeaderText(null);
+        alert.show();
     }
 
     private void limpiarCampos() {

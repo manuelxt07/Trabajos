@@ -25,14 +25,13 @@ public class Inventario {
     }
 
     public void setListaRepuestos(List<Repuesto> listaRepuestos) {
-        listaRepuestos = listaRepuestos;
+        this.listaRepuestos = listaRepuestos;
     }
 
     @Override
     public String toString() {
         return "Inventario{" +
-                "ownedByTaller=" + ownedByTaller +
-                ", listaRepuestos=" + listaRepuestos +
+                "listaRepuestos=" + listaRepuestos +
                 '}';
     }
 

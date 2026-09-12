@@ -75,8 +75,6 @@ public class Repuesto {
                 ", costo=" + costo +
                 ", cantidad=" + cantidad +
                 ", cantidadMinima=" + cantidadMinima +
-                ", ownedByTaller=" + ownedByTaller +
-                ", repuesto=" + repuesto +
                 '}';
     }
 

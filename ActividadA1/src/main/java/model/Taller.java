@@ -100,5 +100,10 @@ public class Taller {
             listaOrdenes.add(ordenServicio);
         }
     }
+    public void registrarBicicleta(Bicicleta bicicleta) {
+        if (bicicleta != null && !listaBicicletas.contains(bicicleta)) {
+            listaBicicletas.add(bicicleta);
+        }
+    }
 
 }

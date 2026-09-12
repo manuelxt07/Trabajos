@@ -10,9 +10,7 @@
       spacing="20.0"
       xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="viewController.InicioViewController">
-
-    <children>
+      fx:controller="controller.MainController">    <children>
 
         <Label text="Bienvenido a BiciTaller">
             <font>

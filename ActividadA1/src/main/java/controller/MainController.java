@@ -22,22 +22,22 @@ public class MainController {
 
     @FXML
     private void abrirGestionClientes(ActionEvent event) {
-        abrirVentana("/view/ClienteView.fxml", "Gestión de Clientes");
+        abrirVentana("/ClienteView.fxml", "Gestión de Clientes");
     }
 
     @FXML
     private void abrirGestionMecanicos(ActionEvent event) {
-        abrirVentana("/view/MecanicoView.fxml", "Gestión de Mecánicos");
+        abrirVentana("/MecanicoView.fxml", "Gestión de Mecánicos");
     }
 
     @FXML
     private void abrirGestionOrdenes(ActionEvent event) {
-        abrirVentana("/view/OrdenServicioView.fxml", "Órdenes de Servicio");
+        abrirVentana("/OrdenServicioView.fxml", "Órdenes de Servicio");
     }
 
     @FXML
     private void abrirInventario(ActionEvent event) {
-        abrirVentana("/view/InventarioView.fxml", "Inventario de Repuestos");
+        abrirVentana("/InventarioView.fxml", "Inventario de Repuestos");
     }
 
     private void abrirVentana(String rutaFxml, String titulo) {
@@ -69,7 +69,7 @@ public class MainController {
     @FXML
     private void ingresarAlSistema(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainView.fxml"));
             Parent root = loader.load();
             MainController controller = loader.getController();
             controller.tallerPrincipal = this.tallerPrincipal;
@@ -87,7 +87,7 @@ public class MainController {
     @FXML
     private void abrirGestionBicicletas(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/BicicletaView.fxml.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BicicletaView.fxml"));
             Parent root = loader.load();
 
             BicicletaController controller = loader.getController();
