@@ -30,18 +30,15 @@ public class BicicletaController {
 
     @FXML
     public void initialize() {
-        // Mapeo columnas bicicletas
         colSerial.setCellValueFactory(new PropertyValueFactory<>("serial"));
         colMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
         colColor.setCellValueFactory(new PropertyValueFactory<>("color"));
 
-        // Mapeo columnas historial
         colFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         colMotivo.setCellValueFactory(new PropertyValueFactory<>("motivo"));
         colDiagnostico.setCellValueFactory(new PropertyValueFactory<>("diagnostico"));
         colMecanico.setCellValueFactory(new PropertyValueFactory<>("mecanico"));
 
-        // Escuchador de clic en la tabla de bicicletas
         tablaBicicletas.getSelectionModel().selectedItemProperty().addListener((obs, viejaSeleccion, nuevaSeleccion) -> {
             if (nuevaSeleccion != null) {
                 cargarHistorialBicicleta(nuevaSeleccion);

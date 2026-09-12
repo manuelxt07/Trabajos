@@ -30,7 +30,6 @@ public class OrdenServicioController {
 
     @FXML
     public void initialize() {
-        // Listener para actualizar las bicicletas cuando se selecciona un cliente
         cbCliente.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 cbBicicleta.setItems(FXCollections.observableArrayList(newVal.getListaBicicletas()));

@@ -8,12 +8,14 @@ public class Taller {
     private List<OrdenServicio> listaOrdenes;
     private List <Individuo> listaIndividuos;
     private Inventario inventario;
+    private ArrayList<Bicicleta> listaBicicletas;
 
     public Taller(String nombre) {
         this.nombre = nombre;
         this.listaOrdenes = new ArrayList<>();
         this.listaIndividuos = new ArrayList<>();
         this.inventario = new Inventario(this);
+        this.listaBicicletas = new ArrayList<Bicicleta>();
     }
 
     public String getNombre() {
@@ -48,6 +50,14 @@ public class Taller {
         this.inventario = inventario;
     }
 
+    public ArrayList<Bicicleta> getListaBicicletas() {
+        return listaBicicletas;
+    }
+
+    public void setListaBicicletas(ArrayList<Bicicleta> listaBicicletas) {
+        this.listaBicicletas = listaBicicletas;
+    }
+
     @Override
     public String toString() {
         return "Taller{" +
@@ -55,6 +65,7 @@ public class Taller {
                 ", listaOrdenes=" + listaOrdenes +
                 ", listaIndividuos=" + listaIndividuos +
                 ", inventario=" + inventario +
+                ", listaBicicletas=" + listaBicicletas +
                 '}';
     }
 

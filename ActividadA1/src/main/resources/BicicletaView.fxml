@@ -18,7 +18,6 @@
 
         <SplitPane dividerPositions="0.45" VBox.vgrow="ALWAYS">
             <items>
-                <!-- Tabla Izquierda: Bicicletas -->
                 <VBox spacing="10.0">
                     <children>
                         <Label text="Seleccione una bicicleta:">

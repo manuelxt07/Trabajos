@@ -71,18 +71,12 @@ public class MainController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
             Parent root = loader.load();
-
-            // Transferir la instancia del taller al nuevo controlador
             MainController controller = loader.getController();
             controller.tallerPrincipal = this.tallerPrincipal;
-
-            // Abrir la nueva ventana del Menú Principal
             Stage stage = new Stage();
             stage.setTitle("Taller FixIt - Menú Principal");
             stage.setScene(new Scene(root, 450, 400));
             stage.show();
-
-            // Cerrar la ventana actual (primary.fxml)
             Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             currentStage.close();
 
