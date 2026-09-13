@@ -14,6 +14,8 @@ import java.util.stream.Collectors;
 
 public class OrdenServicioController {
 
+    private static final double COSTO_BASE_SIN_REPUESTOS = 2000;
+
     private Taller taller;
 
     @FXML private DatePicker dpFecha;
@@ -93,6 +95,10 @@ public class OrdenServicioController {
         colRepuestoNombre.setCellValueFactory(datos -> new javafx.beans.property.SimpleStringProperty(datos.getValue().getRepuesto().getNombre()));
         colRepuestoCantidad.setCellValueFactory(datos -> new javafx.beans.property.SimpleIntegerProperty(datos.getValue().getCantidadUsada()).asObject());
         colRepuestoSubtotal.setCellValueFactory(datos -> new javafx.beans.property.SimpleDoubleProperty(datos.getValue().calcularSubtotal()).asObject());
+
+        // El costo total ahora se calcula solo, ya no se escribe a mano
+        txtCostoTotal.setEditable(false);
+        actualizarCostoTotal();
     }
 
     private void cargarComboBoxes() {
@@ -210,6 +216,20 @@ public class OrdenServicioController {
         repuestosSeleccionados.add(detalle);
         tablaRepuestosOrden.setItems(FXCollections.observableArrayList(repuestosSeleccionados));
         txtCantidadRepuesto.clear();
+        actualizarCostoTotal();
+    }
+
+    /**
+     * Suma el subtotal (cantidadUsada x costoUnitario) de cada repuesto agregado a la orden
+     * y actualiza el campo de costo total con ese valor. Si no hay repuestos agregados,
+     * se usa un costo base fijo de 2000.
+     */
+    private void actualizarCostoTotal() {
+        double totalRepuestos = repuestosSeleccionados.stream()
+                .mapToDouble(DetalleRepuesto::calcularSubtotal)
+                .sum();
+        double total = repuestosSeleccionados.isEmpty() ? COSTO_BASE_SIN_REPUESTOS : totalRepuestos;
+        txtCostoTotal.setText(String.format(java.util.Locale.US, "%.2f", total));
     }
 
     private void mostrarAviso(String mensaje) {
@@ -222,7 +242,7 @@ public class OrdenServicioController {
         dpFecha.setValue(null);
         txtMotivo.clear();
         txtDiagnostico.clear();
-        txtCostoTotal.clear();
+        actualizarCostoTotal();
         cbCliente.getSelectionModel().clearSelection();
         cbBicicleta.getSelectionModel().clearSelection();
         cbMecanico.getSelectionModel().clearSelection();

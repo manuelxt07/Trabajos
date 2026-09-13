@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ActividadA1/BiciTaller.iml" filepath="$PROJECT_DIR$/ActividadA1/BiciTaller.iml" />
       <module fileurl="file://$PROJECT_DIR$/codi.iml" filepath="$PROJECT_DIR$/codi.iml" />
     </modules>
   </component>
